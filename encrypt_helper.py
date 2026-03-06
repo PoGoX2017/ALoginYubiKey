@@ -1,4 +1,4 @@
-import win32crypt
+from win32 import win32crypt
 import binascii
 
 
@@ -14,6 +14,8 @@ def encrypt_data(data, description=""):
     )
     return encrypted
 
+def decrypt_data(encrypted_data):
+    return win32crypt.CryptUnprotectData(encrypted_data, None, None, None, 0)[1]
 
 if __name__ == "__main__":
     print("=== Szyfrowanie danych dla YubiKey Auto Login ===\n")

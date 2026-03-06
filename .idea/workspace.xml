@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3325f0b-1a80-4b9e-b915-53a43243de9a" name="Changes" comment="&lt;feat&gt;: Stworzenie pustego projektu">
+    <list default="true" id="e3325f0b-1a80-4b9e-b915-53a43243de9a" name="Changes" comment="&lt;type&gt;[opcjonalny scope (zakres)]: &lt;opis&gt;&#10;&#10;[opcjonalny body (treść)]&#10;&#10;[opcjonalny footer (stopka)]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encrypt_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrypt_helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yubiauto.py" beforeDir="false" afterPath="$PROJECT_DIR$/yubiauto.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +40,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
     "Python.encrypt_helper.executor": "Run",
+    "Python.yubiauto.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -67,11 +72,21 @@
       <option name="project" value="LOCAL" />
       <updated>1772828586369</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&lt;feat&gt;: Szkielet aplikacji&#10;&#10;Dodano szkielet aplikacji oraz skrypt pomocniczy do enkrypcji poufnych danych. Dodano biblioteke yubikey-manager">
+      <option name="closed" value="true" />
+      <created>1772831919497</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772831919497</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&lt;feat&gt;: Stworzenie pustego projektu" />
-    <option name="LAST_COMMIT_MESSAGE" value="&lt;feat&gt;: Stworzenie pustego projektu" />
+    <MESSAGE value="&lt;feat&gt;: Szkielet aplikacji&#10;&#10;Dodano szkielet aplikacji oraz skrypt pomocniczy do enkrypcji poufnych danych. Dodano biblioteke yubikey-manager" />
+    <MESSAGE value="&lt;type&gt;[opcjonalny scope (zakres)]: &lt;opis&gt;&#10;&#10;[opcjonalny body (treść)]&#10;&#10;[opcjonalny footer (stopka)]" />
+    <option name="LAST_COMMIT_MESSAGE" value="&lt;type&gt;[opcjonalny scope (zakres)]: &lt;opis&gt;&#10;&#10;[opcjonalny body (treść)]&#10;&#10;[opcjonalny footer (stopka)]" />
   </component>
 </project>
