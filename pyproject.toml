@@ -4,7 +4,8 @@ version = "0.1.0"
 description = "Aplikacja do logowania się do systemu z wykorzystaniem challenge-responce"
 requires-python = ">=3.13"
 dependencies = [
-    "fido2==2.1.1",
+    "cryptography==46.0.5",
+    "pyautogui==0.9.54",
     "pystray==0.19.5",
     "pywin32==311",
 ]

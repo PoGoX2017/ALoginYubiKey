@@ -1,37 +1,41 @@
-import os
+import binascii
+import subprocess
 import logging
-from fido2.hid import CtapHidDevice
-from fido2.client import Fido2Client
-from fido2.webauthn import PublicKeyCredentialRequestOptions
-from fido2.server import Fido2Server
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.backends import default_backend
 
-# Dla celów demonstracyjnych używamy stałego origin i rp_id.
-# W rzeczywistej aplikacji możesz je dostosować.
-RP_ID = "ALYK.local"
-ORIGIN = f"https://{RP_ID}"
+def get_yubikey_response(challenge_hex):
+    """Zwraca odpowiedź YubiKey (hex string) dla zadanego challenge."""
+    try:
+        result = subprocess.run(
+            ['ykman', 'otp', 'calculate', '2', challenge_hex],
+            capture_output=True, text=True, check=True
+        )
+        return result.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Błąd ykman: {e.stderr}")
+        return None
+    except FileNotFoundError:
+        logging.error("ykman nie znaleziony. Zainstaluj YubiKey Manager.")
+        return None
 
-def znajdz_yubikey():
-    """Zwraca pierwszy znaleziony YubiKey lub None."""
-    devices = list(CtapHidDevice.list_devices())
-    if devices:
-        return devices[0]
-    return None
+def odszyfruj_haslo(challenge_hex, encrypted_password, iv, tag):
+    """Pobiera response z YubiKey i odszyfrowuje hasło."""
+    response_hex = get_yubikey_response(challenge_hex)
+    if not response_hex:
+        return None
 
-def uwierzytelnij(device, challenge=None):
-    """
-    Wykonuje uwierzytelnienie FIDO2.
-    Zwraca assertion lub rzuca wyjątkiem.
-    """
-    if challenge is None:
-        challenge = os.urandom(32)
+    response_bytes = binascii.unhexlify(response_hex)
+    key = response_bytes[:16]  # pierwsze 16 bajtów = klucz AES-128
 
-    client = Fido2Client(device, ORIGIN)
-    # Przygotuj żądanie (dla uproszczenia bez sprawdzania użytkownika)
-    options = PublicKeyCredentialRequestOptions(
-        challenge=challenge,
-        rp_id=RP_ID,
-    )
-    # Wywołaj interakcję z kluczem (użytkownik może musieć go dotknąć)
-    assertions = client.get_assertion(options)
-    # Zwykle klucz zwraca jedną asercję, bierzemy pierwszą
-    return assertions[0]
+    try:
+        decryptor = Cipher(
+            algorithms.AES(key),
+            modes.GCM(iv, tag),
+            backend=default_backend()
+        ).decryptor()
+        plaintext = decryptor.update(encrypted_password) + decryptor.finalize()
+        return plaintext.decode('utf-8')
+    except Exception as e:
+        logging.error(f"Błąd deszyfrowania: {e}")
+        return None

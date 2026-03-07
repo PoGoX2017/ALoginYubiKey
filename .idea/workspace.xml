@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e3325f0b-1a80-4b9e-b915-53a43243de9a" name="Changes" comment="&lt;type&gt;[opcjonalny scope (zakres)]: &lt;opis&gt;&#10;&#10;[opcjonalny body (treść)]&#10;&#10;[opcjonalny footer (stopka)]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autostart.py" beforeDir="false" afterPath="$PROJECT_DIR$/autostart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/encrypt_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrypt_helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
@@ -80,13 +83,22 @@
       <option name="project" value="LOCAL" />
       <updated>1772831919497</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&lt;feat&gt;: Dodanie wykrywania urzadzenia +&#10;&#10;Dodano kod aplikacji działającej w systemtray&#10;Dodano kod do autostartu&#10;Poprawiono biblioteki">
+      <option name="closed" value="true" />
+      <created>1772841375149</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772841375149</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&lt;feat&gt;: Stworzenie pustego projektu" />
     <MESSAGE value="&lt;feat&gt;: Szkielet aplikacji&#10;&#10;Dodano szkielet aplikacji oraz skrypt pomocniczy do enkrypcji poufnych danych. Dodano biblioteke yubikey-manager" />
     <MESSAGE value="&lt;type&gt;[opcjonalny scope (zakres)]: &lt;opis&gt;&#10;&#10;[opcjonalny body (treść)]&#10;&#10;[opcjonalny footer (stopka)]" />
-    <option name="LAST_COMMIT_MESSAGE" value="&lt;type&gt;[opcjonalny scope (zakres)]: &lt;opis&gt;&#10;&#10;[opcjonalny body (treść)]&#10;&#10;[opcjonalny footer (stopka)]" />
+    <MESSAGE value="&lt;feat&gt;: Dodanie wykrywania urzadzenia +&#10;&#10;Dodano kod aplikacji działającej w systemtray&#10;Dodano kod do autostartu&#10;Poprawiono biblioteki" />
+    <option name="LAST_COMMIT_MESSAGE" value="&lt;feat&gt;: Dodanie wykrywania urzadzenia +&#10;&#10;Dodano kod aplikacji działającej w systemtray&#10;Dodano kod do autostartu&#10;Poprawiono biblioteki" />
   </component>
 </project>
